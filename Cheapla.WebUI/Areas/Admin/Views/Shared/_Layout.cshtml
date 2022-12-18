@@ -1,0 +1,434 @@
+﻿
+<html>
+
+<head>
+    <title>Cheapla | </title>
+
+    <partial name="_CssPartial"></partial>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+          rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css
+"
+          rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+          rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+
+
+    <style>
+        label.required:after {
+            content: "*\00a0";
+            color: red;
+            margin-left: 2px;
+        }
+       
+        :url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");:root {
+            --header-height: 3rem;
+            --nav-width: 68px;
+            --first-color: #4723D9;
+            --first-color-light: #AFA5D9;
+            --white-color: #F7F6FB;
+            --body-font: 'Nunito', sans-serif;
+            --normal-font-size: 1rem;
+            --z-fixed: 100
+        }
+
+        *, ::before, ::after {
+            box-sizing: border-box
+        }
+
+        body {
+            position: relative;
+            margin: var(--header-height) 0 0 0;
+            padding: 0 1rem;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            transition: .5s
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .header {
+            width: 100%;
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            background-color: var(--white-color);
+            z-index: var(--z-fixed);
+            transition: .5s
+        }
+
+        .header_toggle {
+            color: var(--first-color);
+            font-size: 1.5rem;
+            cursor: pointer
+        }
+
+        .header_img {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden
+        }
+
+            .header_img img {
+                width: 40px
+            }
+
+        .l-navbar {
+            position: fixed;
+            top: 0;
+            left: -30%;
+            width: var(--nav-width);
+            height: 100vh;
+            background-color: var(--first-color);
+            padding: .5rem 1rem 0 0;
+            transition: .5s;
+            z-index: var(--z-fixed)
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden
+        }
+
+        .nav_logo, .nav_link {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            column-gap: 1rem;
+            padding: .5rem 0 .5rem 1.5rem
+        }
+
+        .nav_logo {
+            margin-bottom: 2rem
+        }
+
+        .nav_logo-icon {
+            font-size: 1.25rem;
+            color: var(--white-color)
+        }
+
+        .nav_logo-name {
+            color: var(--white-color);
+            font-weight: 700
+        }
+
+        .nav_link {
+            position: relative;
+            color: var(--first-color-light);
+            margin-bottom: 1.5rem;
+            transition: .3s
+        }
+
+            .nav_link:hover {
+                color: var(--white-color)
+            }
+
+        .nav_icon {
+            font-size: 1.25rem
+        }
+
+        .show {
+            left: 0
+        }
+
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 1rem)
+        }
+
+        .active {
+            color: var(--white-color)
+        }
+
+            .active::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 2px;
+                height: 32px;
+                background-color: var(--white-color)
+            }
+
+        .height-100 {
+            height: 100vh
+        }
+
+        .screen and (min-width: 768px) {
+            body
+
+        {
+            margin: calc(var(--header-height) + 1rem) 0 0 0;
+            padding-left: calc(var(--nav-width) + 2rem)
+        }
+
+        .header {
+            height: calc(var(--header-height) + 1rem);
+            padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+        }
+
+        .header_img {
+            width: 40px;
+            height: 40px
+        }
+
+            .header_img img {
+                width: 45px
+            }
+
+        .l-navbar {
+            left: 0;
+            padding: 1rem 1rem 0 0
+        }
+
+        .show {
+            width: calc(var(--nav-width) + 156px)
+        }
+
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 188px)
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .nav-link {
+            display: block;
+            padding: .5rem 1rem;
+            text-decoration: none;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+            color: #fff;
+            margin-right: 10px;
+            text-transform: uppercase;
+            font-weight: 200 !important;
+            font-size: 14px;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+
+
+        .navbar-nav .active {
+            border-bottom: 4px solid #fff;
+        }
+
+        .logo {
+            margin-bottom: 7px !important;
+        }
+
+        .navbar {
+            padding-top: .5rem;
+            padding-bottom: 0px !important;
+        }
+    </style>
+
+</head>
+
+
+
+    <nav class="navbar navbar-expand-lg bg-dark ms-3">
+        <div class="container-fluid">
+
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+
+                    <a asp-controller="Home" asp-action="Index" class="nav-link btn btn-outline-warning ms-2" style="width:150px"><i class="bi bi-house"></i> Ana Sayfa</a>
+                    <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="nav-link btn btn-outline-warning ms-2" style="width:160px"><i class="bi bi-card-list"></i> Kategorİler</a>
+
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="nav-link btn btn-outline-warning ms-2" style="width:150px"><i class="bi bi-gift"></i> Ürünler</a>
+
+                    <a asp-area="Admin" asp-controller="Comment" asp-action="Index" class="nav-link btn btn-outline-warning ms-2" style="width:150px"><i class="bi bi-card-text"></i> Yorumlar</a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+<body id="body-pd" class="mt-2 ms-2" style="background-color: #eee">
+    <header class="header mt-3" id="header" style="color:darkred">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Cheapla</span> </a>
+                <div class="nav_list">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-warning" style="width:180px"><i class="bi bi-house"></i> Ana Sayfa</a>  <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="nav_link btn btn-outline-warning mt-3" style="width:180px"> <i class="bi bi-card-list"></i> Kategorİler </a> <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="nav_link btn btn-outline-warning" style="width:180px"> <i class="bi bi-gift"></i> Ürünler </a>
+                    <a asp-area="Admin" asp-controller="Comment" asp-action="Index" class="nav_link btn-outline-warning" style="width:180px"> <i class="bi bi-card-text"></i> YORUMLAR</a>
+                </div>
+            </div> <a asp-area="Auth" asp-controller="Auth" asp-action="Logout" class="nav_link  btn-outline-warning" style="width:180px"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Çıkış-Yap</span> </a>
+        </nav>
+
+    </div>
+    @RenderBody()
+
+    <footer class="text-center text-lg-start bg-light text-muted ms-3">
+
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+            <div class="me-4 text-reset">
+                <span class="me-4 text-reset"> </span>
+            </div>
+
+            <div>
+                <span class="me-4 text-reset"> Sosyal ağlarda bizimle bağlantı kurun:</span>
+                <a href="https://twitter.com/fatihhozzkan" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/fatihhozzkan" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://twitter.com/fatihhozzkan" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://www.instagram.com/fatihhozzkan/" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/fatih-%C3%B6zkan-62105924b/" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/fatihozkann" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+
+                <div class="row mt-3">
+
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Cheapla
+                        </h6>
+
+
+
+                        <h6>
+                            Alacağın Ne Varsa Cheapla Al  <i class="fas fa-gem me-3"></i>
+
+
+                        </h6>
+
+                    </div>
+
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">İletişim</h6>
+                        <p><i class="fas fa-home me-3"></i> Ankara || TR</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            fatihhhozzzkan10@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 90 534 631 10 06</p>
+                        <p><i class="fas fa-print me-3"></i> + 90 534 631 10 06</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Cheapla:
+            <a class="text-reset fw-bold" href="https://twitter.com/fatihhozzkan">Tüm Hakları Özkan A.Ş Saklidir</a>
+        </div>
+
+    </footer>
+
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <partial name="_JsPartial"></partial>
+
+    @await RenderSectionAsync("Scripts" , required: false)
+
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote(
+                {
+                    height: 400
+                }
+            );
+        });
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId),
+                    bodypd = document.getElementById(bodyId),
+                    headerpd = document.getElementById(headerId)
+
+
+                if (toggle && nav && bodypd && headerpd) {
+                    toggle.addEventListener('click', () => {
+
+                        nav.classList.toggle('show')
+
+                        toggle.classList.toggle('bx-x')
+
+                        bodypd.classList.toggle('body-pd')
+
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+
+            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+
+            const linkColor = document.querySelectorAll('.nav_link')
+
+            function colorLink() {
+                if (linkColor) {
+                    linkColor.forEach(l => l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+
+        });
+
+    </script>
+
+</body>
+</html>

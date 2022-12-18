@@ -1,0 +1,43 @@
+﻿@*<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark ms-2 mt-3" style="width:280px;">
+     <div class="ms-5">
+      <p class="fw-bold ms-3" style="color:red">Yönetim Paneli</p>
+    </div>
+    <hr>
+  
+    <ul class="nav nav-pills flex-column mb-auto  ms-3">
+        <li class="nav-item">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-warning" style="width:200px"><i class="bi bi-house"></i> Ana Sayfa</a>
+        </li>
+        <li>
+            <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="btn btn-outline-warning mt-2" style="width:200px"><i class="bi bi-card-list"></i> Kategoriler</a>
+        </li>
+        <li>
+            <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn btn-outline-warning mt-2" style="width:200px"><i class="bi bi-gift"></i> Ürünler</a>
+        </li>
+        <li>
+
+
+            <a asp-controller="Account" asp-action="Index" class="btn btn-outline-warning me-6 mt-2" style="width:200px"><i class="bi bi-person-circle"></i> Profil Güncelle</a>
+
+
+        </li>
+        <li>
+            <a asp-controller="ChangePassword" asp-action="ChangeUpdate" class="btn btn-outline-warning me-6 mt-2" style="width:200px"><i class="bi bi-person-circle"></i> Şifre DEğiştir</a>
+        </li>
+        <li>
+            <a asp-area="Admin" asp-controller="Comment" asp-action="Index" class="btn btn-outline-warning me-6 mt-2" style="width:200px"><i class="bi bi-card-text"></i> Yorumlar</a>
+        </li>
+        <li>
+
+
+            <a asp-area="Auth" asp-controller="Auth" asp-action="Logout" class="btn btn-outline-warning me-6 mt-2" style="width:200px"><i class="bi bi-box-arrow-left"></i> Çıkış-Yap</a>
+
+        </li>
+      
+    </ul>
+
+    <hr>
+
+</div>
+
+*@

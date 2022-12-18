@@ -1,0 +1,81 @@
+﻿@model ChangePasswordViewModel
+
+<style>
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+            font-size: 1rem;
+            line-height: 2.15;
+            padding-left: .75em;
+            padding-right: .75em;
+        }
+
+        .card-registration .select-arrow {
+            top: 13px;
+        }
+    </style>
+<div class="container mb-5" style="padding-top:50px; margin-bottom:40px">
+    <div class="card" style="border:solid 2px">
+        <div class="card-header fw-bold fs-5">
+            Hesap Bilgileri
+        </div>
+        <div class="card-body">
+            @if(!string.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
+            {
+                <div class="alert alert-danger">
+                     @ViewBag.ErrorMessage
+                    </div>
+            }
+            <form asp-controller="ChangePassword" asp-action="ChangeUpdate" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="row gutters">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="mb-2 text-warning fw-bold">Kişi Bilgileri</h6>
+                    </div>
+                    <span class="text-danger fw-bold mt-1" asp-validation-for="LastPassword"></span>
+                    <div class="d-flex justify-content">
+                   
+
+                    <div class="form-outline mb-4">
+                          
+                               
+                                <input type="password" id="form3Example8" class="form-control form-control-lg" asp-for="LastPassword" />
+                            <label class="form-label" asp-for="LastPassword"></label>
+                        
+
+                        </div>
+                    </div>
+                    <span class="text-danger fw-bold mt-1" asp-validation-for="Password"></span>
+                    <div class="d-flex justify-content">
+               
+
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example8" class="form-control form-control-lg" asp-for="Password" />
+                        <label class="form-label" asp-for="Password"></label>
+                    </div>
+                    </div>
+                    <span class="text-danger fw-bold mt-1" asp-validation-for="PasswordConfirm"></span>
+                    <div class="d-flex justify-content">
+                   
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form3Example8" class="form-control form-control-lg" asp-for="PasswordConfirm" />
+                        <label class="form-label" asp-for="PasswordConfirm"></label>
+                        
+                    </div>
+                    </div>
+
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="text-right mt-3">
+                                <button type="submit" class="btn btn-warning">Güncelle</button>
+                            </div>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+     
+           
+        </div>
+</div>
+ 
+  
+

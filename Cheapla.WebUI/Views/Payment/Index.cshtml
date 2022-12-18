@@ -1,0 +1,151 @@
+﻿<div class="col-md-7 col-lg-8 ms-4">
+    <h4 class="mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fatura Adresi</font></font></h4>
+    <form class="needs-validation" novalidate="" asp-controller="Payment" asp-action="Order" method="post">
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ilk isim</font></font></label>
+                <input type="text" class="form-control" id="firstName" placeholder="Adınızı Giriniz ..." value="" required="firstName">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="lastName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">soyadı</font></font></label>
+                <input type="text" class="form-control" id="lastName" placeholder="Soy Adınızı Giriniz..." value="" required="">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="username" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kullanıcı adı</font></font></label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@*@*@ </font></font></span>
+                    <input type="text" class="form-control" id="username" placeholder="Kullanıcı adı" required="">
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="email" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">E-posta </font></font><span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(isteğe bağlı)</font></font></span></label>
+                <input type="email" class="form-control" id="email" placeholder="sen@example.com">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="address" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">adres</font></font></label>
+                <input type="text" class="form-control" id="address" placeholder="mah sokak site ismi vb." required="">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="address2" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">adres 2 </font></font><span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(isteğe bağlı)</font></font></span></label>
+                <input type="text" class="form-control" id="address2" placeholder="mah sokak site ismi vb.">
+            </div>
+
+            <div class="col-md-5">
+                <label for="country" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ülke</font></font></label>
+                <select class="form-select" id="country" required="">
+                    <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Seçmek...</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Amerika Birleşik Devletleri</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Almanya</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İspanya</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Türkiye</font></font></option>
+                </select>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="state" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bölge</font></font></label>
+                <select class="form-select" id="state" required="">
+                    <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Seçmek...</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kaliforniya</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Berlin</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Madrid</font></font></option>
+                     <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ankara</font></font></option>
+                      <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eskişehir</font></font></option>
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İstanbul</font></font></option>
+                     <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İzmir</font></font></option>
+                </select>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label for="zip" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">posta kodu</font></font></label>
+                <input type="text" class="form-control" id="zip" placeholder="06900" required="">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teslimat adresi fatura adresim ile aynı</font></font></label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bu bilgiyi bir dahaki sefere saklayın</font></font></label>
+        </div>
+
+        <hr class="my-4">
+
+        <h4 class="mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ödeme şekli</font></font></h4>
+
+        <div class="my-3">
+            <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                <label class="form-check-label" for="credit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kredi kartı</font></font></label>
+            </div>
+            <div class="form-check">
+                <input id="cash" name="paymentMethod" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="cash"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nakit</font></font></label>
+            </div>
+            <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+                <label class="form-check-label" for="paypal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PayPal</font></font></label>
+            </div>
+        </div>
+
+        <div class="row gy-3">
+            <div class="col-md-6">
+                <label for="cc-name" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Karttaki isim</font></font></label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                <small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kartta görüntülenen tam ad</font></font></small>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="cc-number" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">kart numarası</font></font></label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label for="cc-expiration" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Son kullanma tarihi</font></font></label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <label for="cc-cvv" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Üçlü Kod (CVV)</font></font></label>
+                <input type="password" class="form-control" id="cc-cvv" placeholder="" required="">
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ödemeye devam et</font></font></button>
+    </form>
+</div>

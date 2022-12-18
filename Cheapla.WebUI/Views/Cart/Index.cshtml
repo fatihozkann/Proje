@@ -1,0 +1,112 @@
+﻿@model CartViewModel
+
+<div class="container">
+    <h2>Alışveriş Sepeti</h2>
+    <hr />
+
+    <div class="row-mt-5">
+        <div class="col-md-8">
+            <div class="text-left">
+                <h3>Sepetiniz</h3>
+            </div>
+
+            @if (Model.CartItems.Count > 0)
+            {
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Ürün Adı</th>
+                            <th>Fiyat</th>
+                            <th>Miktar</th>
+                            <th>Toplam Tutar</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            <tr>
+                                <td>
+                                    @if (item.ImagePath == null)
+                                    {
+                                        <img class="mx-auto d-block" style="width:200px ; height:200px" src="~/images/noImage.png/" />
+
+                                    }
+
+                                    else
+                                    {
+                                        <a href="~/images/products/@item.ImagePath" data-lightbox="@Model.CartId" data-title="@item.Name">
+                                            <img class="mx-auto d-block" style="width:200px ; height:200px" src="~/images/products/@item.ImagePath" />
+                                        </a>
+                                    }
+                                </td>
+                                <td>@item.Name</td>
+                                <td>@item.UnitPrice</td>
+                                <td>@item.Quantity</td>
+                                <td>@(item.Quantity * item.UnitPrice)</td>
+                                <td>
+                                    <form asp-controller="Cart" asp-action="DeleteFromCart" method="post">
+                                        <input type="hidden" name="productId" value="@item.ProductId" />
+                                        <button type="submit" class="btn btn-danger btn-sm">X</button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    Sepetinizde Ürün Yok!
+                </div>
+            }
+        </div>
+        <div class="col-md-4">
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Sepet Toplamı</th>
+                        <td>@Model.TotalPrice()</td>
+                    </tr>
+                    <tr>
+                        <th>Kargo</th>
+                        <td>Ücretsiz</td>
+                    </tr>
+                    <tr>
+                        <th>Sipariş Toplamı</th>
+                        <td>@Model.TotalPrice()</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+ 
+                <div class="dib">
+                    <div class="row">
+                    <a href="~/" class="send btn btn-sm btn-outline-warning">
+                        <i class="fa fa-arrow-circle-left"></i> Alışverişe Devam Et
+                    </a>
+                    </div>
+                </div>
+                <div class="dib mt-2">
+                    <div class="row">
+                    <a asp-controller="Payment" asp-action="Index" class="send btn btn-sm btn-outline-warning">
+                        <i class="fa fa-arrow-circle-right"></i>Ödeme Yap
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+

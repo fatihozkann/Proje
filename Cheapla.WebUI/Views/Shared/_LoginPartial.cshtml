@@ -1,0 +1,48 @@
+﻿@model LoginViewModel
+
+<form asp-controller="Auth" asp-action="Login" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+    <section class="text-center text-lg-start">
+        <style>
+            .cascading-right {
+                margin-right: -50px;
+            }
+        </style>
+
+        <div class="container py-4">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+                        <div class="card-body p-5 shadow-5 text-center">
+                            <h2 class="fw-bold mb-5">Giriş Yap</h2>
+                            
+                             
+                                <div class="form-outline mb-4">
+                                    <input asp-for="Email" type="text" class="form-control form-control-dark text-bg-dark" placeholder="Eposta...">
+                                </div>
+
+                                <div class="form-outline mb-4">
+
+                                    <input asp-for="Password" type="password" class="form-control form-control-dark text-bg-dark" placeholder="Şifre...">
+                                </div>
+
+                                <button type="submit" class="btn btn-warning ms-2">Giriş</button>
+
+
+                                <button type="button" id="btnGirisIptal" class="btn btn-outline-danger ms-2">İptal</button>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="~/images/products/CheaplaLogin.gif" class="w-100 rounded-4 shadow-4"
+                         alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

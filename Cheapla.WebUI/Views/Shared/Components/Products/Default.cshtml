@@ -1,0 +1,174 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc;
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@model IPagedList<ProductViewModel>
+<div class="row">
+
+    @if (Model.Any())
+    {
+
+
+        @foreach (var product in Model)
+        {
+            @if (Model != null && Model.Count > 1)
+            {
+                <div class="col-md-3 mb-3">
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                             
+                                @if (product.ImagePath == null)
+                                {
+                                    <img class="mx-auto d-block" style="width:150px ; height:200px" src="~/images/noImage.png/" />
+
+                                }
+
+                                else
+                                {
+                                    <a href="~/images/products/@product.ImagePath" data-lightbox="@product.Id" data-title="@product.Name">
+                                        <img class="mx-auto d-block" style="width:150px ; height:200px" src="~/images/products/@product.ImagePath" />
+                                    </a>
+                                }
+
+
+
+                             
+                            </div>
+
+
+                            <div class="card-body" style="background-color:darkgray">
+                                <p class="card-text fw-bold">@product.Name</p>
+                                <p class="card-text fw-bold" style="color:red">@product.UnitPrice TL</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex">
+                                        <div class="row">
+                                            <a asp-controller="Home" asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-outline-success"><i class="bi bi-info-circle"></i> İncele</a>
+
+                                            @if (User.IsLogged())
+                                            {
+                                               
+                                                <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline;">
+                                                    <div class="row">
+                                                    <input type="hidden" name="productId" value="@product.Id" />
+                                                    <input type="hidden" name="quantity" value="1" />
+                                                    <button type="submit" class="send btn btn-sm btn-outline-warning mt-2" style="display:inline;"><i class="bi bi-cart4"></i> Sepete Ekle</button>
+                                                    </div>
+                                                </form>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+        }
+
+
+
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            Ürün Yok
+        </div>
+    }
+
+    @* <nav aria-label="Page navigation example">*@
+    @*     <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("index", new { page}))
+
+    </ul>*@
+
+    <nav>
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("index","Home" ,new {  page  }), new PagedListRenderOptions()
+        {
+        LiElementClasses=new List<string>
+        {"page-link"}
+
+        //ActiveLiElementClass = "active",
+        //PageClasses = new[]{ "page-link"},
+
+        //UlElementClasses = new[] { "pagination","justify-content-center", "mt-3" },
+        //LinkToNextPageFormat = "Next",
+        //LinkToPreviousPageFormat = "Previous",
+        //MaximumPageNumbersToDisplay = 5,
+        //DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+        //DisplayLinkToNextPage = PagedListDisplayMode.Always
+        })
+
+
+    </nav>
+
+</div>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+        @foreach (var product in Model)
+        {
+            <div class="carousel-item active">
+
+                <a href="~/images/products/@product.ImagePath" data-lightbox="@product.Id" data-title="@product.Name">
+                    <img class="mx-auto d-block" style="width:190px ; height:200px" src="~/images/products/@product.ImagePath" />
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <p class="card-text fw-bold" style="color:black">@product.Name</p>
+                    <p class="card-text fw-bold" style="color:red">@product.UnitPrice TL</p>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@product.Id" class="btn btn-sm btn-outline-success me-3"><i class="bi bi-info-circle"></i> İncele</a>
+                    @if (User.IsLogged())
+                    {
+                        <form asp-controller="Cart" asp-action="AddToCart" method="post" style="display:inline;">
+                            <input type="hidden" name="productId" value="@product.Id" />
+                            <input type="hidden" name="quantity" value="1" />
+                            <button type="submit" class="send btn btn-sm btn-outline-warning ms-2" style="display:inline;"><i class="bi bi-cart4"></i> Sepete Ekle</button>
+                        </form>
+                    }
+
+
+
+                </div>
+
+            </div>
+
+
+        }
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+
+
+
+
+</div>
+
